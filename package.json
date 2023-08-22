@@ -13,7 +13,6 @@
     "docker": "docker-compose up -d",
     "format": "prettier --write .",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "start": "cross-env NODE_ENV=production node ./build/server.js",
     "start:mocks": "cross-env NODE_ENV=production node --require ./mocks --require dotenv/config ./build/server.js",
     "test": "vitest",
@@ -32,7 +31,6 @@
   ],
   "dependencies": {
     "@isaacs/express-prometheus-middleware": "^1.2.1",
-    "@prisma/client": "^4.16.2",
     "@remix-run/css-bundle": "^1.19.3",
     "@remix-run/express": "^1.19.3",
     "@remix-run/node": "^1.19.3",
@@ -80,7 +78,6 @@
     "postcss": "^8.4.28",
     "prettier": "3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "prisma": "^4.16.2",
     "start-server-and-test": "^2.0.0",
     "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",
@@ -92,8 +89,5 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  },
-  "prisma": {
-    "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
   }
 }
